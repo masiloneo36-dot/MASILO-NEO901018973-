@@ -1,45 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agri Solutions Ltd</title>
 
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #22c55e;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .bg-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        /* DARK OVERLAY TO FIX VISIBILITY */
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: -1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #22c55e;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #16a34a;
+        }
+
+        .services {
+            padding: 80px 40px;
+            text-align: center;
+            background: #111827;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1f2933;
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: #22c55e;
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
+<header>
+    <h2>Agri Solutions Ltd</h2>
     <nav>
-    <header>
-        <h2>Agri Solutions Ltd</h2>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="product.html">Services</a>
-            <a href="business.html">Business</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Services</a>
+        <a href="business.html">Business</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-    <main>
+<section class="hero">
+    <video autoplay muted loop class="bg-video">
+        <source src="injection.mp4" type="video/mp4">
+    </video>
 
-        <section class="hero">
-            <video autoplay muted loop class="bg-video">
-                <source src="injection.mp4" type="video/mp4">
-            </video>
+    <div class="hero-text">
+        <h1>Modern Agriculture Starts Here</h1>
+        <p>Premium livestock solutions, organic feed, and advanced farming services built for the future.</p>
+        <button class="btn">Explore Services</button>
+    </div>
+</section>
 
-            <div class="hero-text">
-                <h1>Welcome to Agri Solutions Ltd</h1>
-                <p>We provide high-quality agricultural solutions including organic animal feed, livestock services, and premium meat products.</p>
-            </div>
-        </section>
-        <section>
-            <h2>Our Services</h2>
-            <p>We offer livestock feeding, veterinary care, and modern farming solutions.</p>
-        </section>
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Animal Feed</h3>
+            <p>High-quality organic feed for healthy livestock growth.</p>
+        </div>
+        <div class="card">
+            <h3>Veterinary Care</h3>
+            <p>Professional livestock healthcare and treatment services.</p>
+        </div>
+        <div class="card">
+            <h3>Farming Solutions</h3>
+            <p>Modern techniques to improve productivity and profits.</p>
+        </div>
+    </div>
+</section>
 
-    </main>
+<footer>
+    <p>© 2026 Agri Solutions Ltd | Built by Neo</p>
+</footer>
 
 </body>
 </html>
